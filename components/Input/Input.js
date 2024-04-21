@@ -9,7 +9,7 @@ export default function Input() {
         placeholder="Température"
         keyboardType="numeric"
         maxLength={4}
-        
+        defaultValue="451"
       />
       <Text style={styles.unit}>°F</Text>
     </View>

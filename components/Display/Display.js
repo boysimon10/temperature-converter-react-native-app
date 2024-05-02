@@ -1,10 +1,12 @@
-import { View, Text } from "react-native";
+import React from "react";
+import { Text } from "react-native";
 import styles from "./Display.style";
 
-export default function Display() {
-    return (
-        <Text style={styles.text}>
-            232°C
-        </Text>
-        );
+export default function Display({ temperature, unit }) {
+  const premiereLettre = unit.charAt(0);
+  return (
+    <Text style={styles.text}>
+      {temperature.toFixed(2)}°{premiereLettre}
+    </Text>
+  );
 }

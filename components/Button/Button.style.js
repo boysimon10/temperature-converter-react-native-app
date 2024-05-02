@@ -4,7 +4,8 @@ const styles = StyleSheet.create({
     container: {
         alignSelf: "stretch",
         justifyContent: "center",
-      },
+        alignItems: "center",
+    },
     button: {
         backgroundColor: '#000',
         paddingVertical: 10,
@@ -19,4 +20,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
+
 export default styles;

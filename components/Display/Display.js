@@ -6,7 +6,7 @@ export default function Display({ temperature, unit }) {
   const premiereLettre = unit.charAt(0);
   return (
     <Text style={styles.text}>
-      {temperature.toFixed(2)}°{premiereLettre}
+      {temperature.toFixed(1)}°{premiereLettre}
     </Text>
   );
 }

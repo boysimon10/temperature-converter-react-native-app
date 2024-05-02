@@ -1,7 +1,7 @@
 // App.js
 
 import React, { useState } from "react";
-import { ImageBackground, View } from "react-native";
+import { ImageBackground, View, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { styles } from "./App.style";
 import Input from "./components/Input/Input";
 import Button from "./components/Button/Button";
@@ -34,20 +34,22 @@ export default function App() {
     : hotBackground;
 
   return (
-    <ImageBackground source={backgroundImage} style={styles.container}>
-      <View style={styles.workspace}>
-        <Display
-          temperature={convertTemperature()}
-          unit={unit === "Celsius" ? "Fahrenheit" : "Celsius"}
-        />
-        <Input
-          temperature={temperature}
-          setTemperature={setTemperature}
-          unit={unit}
-          setUnit={setUnit}
-        />
-        <Button setUnit={setUnit} unit={unit} />
-      </View>
-    </ImageBackground>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <ImageBackground source={backgroundImage} style={styles.container}>
+        <View style={styles.workspace}>
+          <Display
+            temperature={convertTemperature()}
+            unit={unit === "Celsius" ? "Fahrenheit" : "Celsius"}
+          />
+          <Input
+            temperature={temperature}
+            setTemperature={setTemperature}
+            unit={unit}
+            setUnit={setUnit}
+          />
+          <Button setUnit={setUnit} unit={unit} />
+        </View>
+      </ImageBackground>
+    </TouchableWithoutFeedback>
   );
 }

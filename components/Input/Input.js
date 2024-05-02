@@ -6,8 +6,6 @@ export default function Input({ temperature, setTemperature, unit, setUnit }) {
   const handleChange = (text) => {
     if (!isNaN(parseFloat(text)) && isFinite(text)) {
       setTemperature(parseFloat(text));
-    } else if (text === "") {
-      setTemperature(0);
     }
   };
   
